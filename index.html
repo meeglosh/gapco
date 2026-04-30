@@ -786,7 +786,35 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ─── LUCIDE ICONS ─────────────────────────────────── */
+    .vcard-icon svg,
+    .vcard-more .vcard-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.5;
+    }
+
+    .ico-green svg  { stroke: var(--green-light); }
+    .ico-gold svg   { stroke: var(--gold-dark); }
+    .ico-purple svg { stroke: #9b8fff; }
+    .ico-white svg  { stroke: rgba(255,255,255,0.55); }
+
+    .pillar-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--navy);
+      stroke-width: 1.5;
+    }
+
+    .stat-num svg {
+      width: 40px;
+      height: 48px;
+      margin: 0 auto 0.5rem;
+      display: block;
+    }
   </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -888,7 +916,20 @@
           <div class="stat-lbl">Guiding Vision</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">🍍</div>
+          <div class="stat-num">
+            <svg viewBox="0 0 110 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M55 42 Q55 14 42 4 Q49 20 55 28" fill="#52B788"/>
+              <path d="M55 42 Q55 14 68 4 Q61 20 55 28" fill="#2D6A4F"/>
+              <path d="M55 42 Q32 18 18 7 Q37 23 48 36" fill="#74C69D"/>
+              <path d="M55 42 Q78 18 92 7 Q73 23 62 36" fill="#40916C"/>
+              <ellipse cx="55" cy="93" rx="40" ry="48" fill="#F4C430"/>
+              <path d="M55 48 L44 60 L55 72 L66 60Z" fill="#C9A227" opacity="0.35"/>
+              <path d="M33 72 L22 84 L33 96 L44 84Z" fill="#C9A227" opacity="0.3"/>
+              <path d="M55 72 L44 84 L55 96 L66 84Z" fill="#C9A227" opacity="0.3"/>
+              <path d="M77 72 L66 84 L77 96 L88 84Z" fill="#C9A227" opacity="0.3"/>
+              <ellipse cx="40" cy="70" rx="9" ry="14" fill="rgba(255,255,255,0.12)" transform="rotate(-18 40 70)"/>
+            </svg>
+          </div>
           <div class="stat-lbl">Official Spirit</div>
         </div>
       </div>
@@ -912,7 +953,7 @@
       <!-- Puzzleminds -->
       <div class="vcard v-puzzleminds reveal">
         <span class="vcard-badge badge-live">Live</span>
-        <div class="vcard-icon ico-green">🧩</div>
+        <div class="vcard-icon ico-green"><i data-lucide="puzzle"></i></div>
         <div class="vcard-name">Puzzleminds</div>
         <a href="https://puzzleminds.co" target="_blank" rel="noopener noreferrer" class="vcard-url">puzzleminds.co ↗</a>
         <p class="vcard-desc">Creative and uniquely designed jigsaw puzzles for curious minds. Puzzleminds brings a fresh, design-forward aesthetic to the classic puzzle format, where every piece tells a bigger story.</p>
@@ -924,7 +965,7 @@
       <!-- Sockyard -->
       <div class="vcard v-sockyard reveal">
         <span class="vcard-badge badge-soon">Coming Soon</span>
-        <div class="vcard-icon ico-gold">🧦</div>
+        <div class="vcard-icon ico-gold"><i data-lucide="tag"></i></div>
         <div class="vcard-name">Sockyard</div>
         <span class="vcard-url" style="cursor:default;">sockyard.com</span>
         <p class="vcard-desc">A high-end e-commerce destination for people who take their sock game seriously. Premium materials, bold designs, and a curation that sets a new standard for what socks can be.</p>
@@ -934,7 +975,7 @@
       <!-- Wovenmusic -->
       <div class="vcard v-woven reveal">
         <span class="vcard-badge badge-soon">Coming Soon</span>
-        <div class="vcard-icon ico-purple">🎵</div>
+        <div class="vcard-icon ico-purple"><i data-lucide="headphones"></i></div>
         <div class="vcard-name">Wovenmusic</div>
         <span class="vcard-url" style="cursor:default;">wovenmusic.app</span>
         <p class="vcard-desc">A micro-subscription platform connecting bands directly to their fans. Launching with early 2000s Interscope artist Woven, who is opening up their full vault: demos, b-sides, live recordings, side projects, and early access to new releases.</p>
@@ -943,7 +984,7 @@
 
       <!-- More -->
       <div class="vcard vcard-more reveal">
-        <div class="vcard-icon" style="background:rgba(255,255,255,0.06); font-size:1.1rem;">✦</div>
+        <div class="vcard-icon ico-white" style="background:rgba(255,255,255,0.06);"><i data-lucide="layers"></i></div>
         <div>
           <div class="vcard-name" style="font-size:1.1rem; margin-bottom:0.3rem;">More in the works.</div>
           <p class="vcard-desc" style="margin:0;">GAPCO is always growing. New ventures across consumer goods, digital products, and creative culture are constantly in development. Stay tuned, or reach out.</p>
@@ -968,17 +1009,17 @@
 
     <div class="pillars">
       <div class="pillar reveal">
-        <div class="pillar-icon">🎯</div>
+        <div class="pillar-icon"><i data-lucide="target"></i></div>
         <h3>Intentional Design</h3>
         <p>Every product we ship has a reason for existing. We obsess over the details so our customers don't have to wonder.</p>
       </div>
       <div class="pillar reveal">
-        <div class="pillar-icon">🌱</div>
+        <div class="pillar-icon"><i data-lucide="leaf"></i></div>
         <h3>Built to Last</h3>
         <p>GAPCO ventures are built with longevity in mind, not flash-in-the-pan moments, but enduring brands that compound over time.</p>
       </div>
       <div class="pillar reveal">
-        <div class="pillar-icon">✦</div>
+        <div class="pillar-icon"><i data-lucide="zap"></i></div>
         <h3>Distinctly Original</h3>
         <p>We don't copy the market. We look for the gap, the thing that should exist but doesn't yet, and we build it ourselves.</p>
       </div>
@@ -1060,6 +1101,8 @@
   }, { threshold: 0.45 });
 
   sections.forEach(s => navIO.observe(s));
+
+  lucide.createIcons();
 </script>
 
 </body>
