@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAPCO, LLC: The Great American Pineapple Company</title>
+  <meta name="description" content="GAPCO, LLC is a venture studio building bold, original brands across consumer products, digital experiences, and creative culture.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0D1B2A;
+      --navy-mid:    #152233;
+      --gold:        #F4C430;
+      --gold-dark:   #C9A227;
+      --green:       #2D6A4F;
+      --green-light: #52B788;
+      --green-pale:  #74C69D;
+      --cream:       #FDFAF3;
+      --cream-dark:  #F2ECD8;
+      --white:       #FFFFFF;
+      --text:        #1C1C1C;
+      --text-mid:    #4B4B4B;
+      --text-muted:  #8B8B8B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 68px;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(244, 196, 48, 0.12);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .nav-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #ffd340 !important; color: var(--navy) !important; }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero-glow-gold {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(244,196,48,0.07) 0%, transparent 70%);
+      top: -100px; left: 50%; transform: translateX(-50%);
+    }
+
+    .hero-glow-green {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(45,106,79,0.12) 0%, transparent 70%);
+      bottom: 0; left: -100px;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image:
+        repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+      background-size: 52px 52px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.75rem;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .hero-pineapple {
+      width: 110px;
+      height: 130px;
+      margin: 0 auto 2.25rem;
+      filter: drop-shadow(0 8px 32px rgba(244,196,48,0.25));
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.38);
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.9rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: #ffd340; transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.9rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 42px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: grow 2.2s ease-in-out infinite;
+      transform-origin: top;
+    }
+
+    @keyframes grow {
+      0%   { transform: scaleY(0); opacity: 1; }
+      60%  { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1); opacity: 0; }
+    }
+
+    .scroll-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ─── SECTION HELPERS ──────────────────────────────── */
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ─── ABOUT ────────────────────────────────────────── */
+    .about {
+      padding: 7.5rem 2rem;
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text em { font-style: italic; color: var(--text); }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .stat-card {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      border: 1px solid rgba(244, 196, 48, 0.08);
+      transition: border-color 0.3s;
+    }
+
+    .stat-card:hover { border-color: rgba(244, 196, 48, 0.25); }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .stat-lbl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ─── VENTURES ─────────────────────────────────────── */
+    .ventures {
+      padding: 7.5rem 2rem;
+      background: var(--navy-mid);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ventures::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(82,183,136,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .ventures .section-tag { color: var(--green-light); }
+
+    .ventures-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .ventures-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .ventures-header-note {
+      color: rgba(255,255,255,0.38);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      max-width: 280px;
+    }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .vcard {
+      --accent: rgba(244,196,48,0.07);
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .vcard::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+
+    .vcard:hover {
+      border-color: rgba(244,196,48,0.22);
+      transform: translateY(-5px);
+    }
+
+    .vcard:hover::before { opacity: 1; }
+
+    .vcard.v-puzzleminds { --accent: rgba(82,183,136,0.1); }
+    .vcard.v-sockyard    { --accent: rgba(244,196,48,0.09); }
+    .vcard.v-woven       { --accent: rgba(129,103,255,0.1); }
+
+    .vcard-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      border-radius: 20px;
+    }
+
+    .badge-live  { background: rgba(82,183,136,0.18); color: var(--green-light); }
+    .badge-soon  { background: rgba(244,196,48,0.14); color: var(--gold); }
+
+    .vcard-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .ico-green  { background: rgba(82,183,136,0.14); }
+    .ico-gold   { background: rgba(244,196,48,0.14); }
+    .ico-purple { background: rgba(129,103,255,0.14); }
+
+    .vcard-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .vcard-url {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gold);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+      margin-bottom: 1.1rem;
+      display: inline-block;
+    }
+
+    .vcard-url:hover { opacity: 1; }
+
+    .vcard-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.42);
+      flex: 1;
+    }
+
+    .vcard-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: rgba(255,255,255,0.25);
+      transition: color 0.2s;
+    }
+
+    .vcard-link.is-live { color: var(--green-light); }
+    .vcard-link.is-live:hover { color: var(--green-pale); }
+
+    .vcard-link .arrow { transition: transform 0.2s; }
+    .vcard-link:hover .arrow { transform: translateX(3px); }
+
+    /* More card */
+    .vcard-more {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      border-style: dashed;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .vcard-more .vcard-icon { font-size: 1rem; background: rgba(255,255,255,0.06); }
+
+    .vcard-more-cta {
+      margin-left: auto;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.45);
+      padding: 0.65rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .vcard-more-cta:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── PHILOSOPHY ───────────────────────────────────── */
+    .philosophy {
+      padding: 7.5rem 2rem;
+      background: var(--cream);
+    }
+
+    .philosophy-top {
+      max-width: 700px;
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+
+    .philosophy-top .section-tag { margin-bottom: 1.25rem; justify-content: center; }
+    .philosophy-top .section-tag::before { display: none; }
+    .philosophy-top .section-tag { border-left: 3px solid var(--gold); padding-left: 0.75rem; font-size: 0.68rem; }
+
+    .philosophy-top h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .divider {
+      width: 52px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 1.75rem auto 1.75rem;
+    }
+
+    .philosophy-top p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+    }
+
+    .philosophy-top p + p { margin-top: 1rem; }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .pillar {
+      background: var(--cream-dark);
+      border-radius: 10px;
+      padding: 2rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .pillar-icon { font-size: 1.6rem; margin-bottom: 1.1rem; }
+
+    .pillar h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.65rem;
+    }
+
+    .pillar p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* ─── CONTACT ──────────────────────────────────────── */
+    .contact {
+      padding: 7.5rem 2rem;
+      background: var(--green);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0, rgba(255,255,255,0.025) 1px, transparent 0, transparent 50%);
+      background-size: 36px 36px;
+    }
+
+    .contact-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(244,196,48,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .contact .section-tag {
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact .section-tag::before { background: rgba(255,255,255,0.4); }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1rem 2.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 24px rgba(244,196,48,0.3);
+    }
+
+    .contact-btn:hover { background: #ffd340; transform: translateY(-2px); }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 2.25rem 2.5rem;
+      border-top: 1px solid rgba(244,196,48,0.1);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+
+    .footer-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.32);
+      text-decoration: none;
+      font-size: 0.78rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.22);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .ventures-grid { grid-template-columns: 1fr 1fr; }
+      .vcard-more { flex-direction: column; align-items: flex-start; }
+      .vcard-more-cta { margin-left: 0; }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .ventures-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* ─── ENTRANCE ANIMATIONS ──────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://thegapco.com" class="nav-logo">
+    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M14 11 Q14 3 10 0.5 Q12 5.5 14 7.5" fill="#52B788"/>
+      <path d="M14 11 Q14 3 18 0.5 Q16 5.5 14 7.5" fill="#2D6A4F"/>
+      <path d="M14 11 Q7 4 3 1.5 Q8 6 12 9.5" fill="#74C69D"/>
+      <path d="M14 11 Q21 4 25 1.5 Q20 6 16 9.5" fill="#40916C"/>
+      <ellipse cx="14" cy="23" rx="12" ry="13" fill="#F4C430"/>
+      <path d="M14 11 L10 16 L14 21 L18 16Z" fill="#C9A227" opacity="0.4"/>
+      <path d="M14 21 L10 26 L14 31 L18 26Z" fill="#C9A227" opacity="0.4"/>
+      <path d="M4 16 L2 21 L6 23.5 L10 18.5Z" fill="#C9A227" opacity="0.3"/>
+      <path d="M24 16 L26 21 L22 23.5 L18 18.5Z" fill="#C9A227" opacity="0.3"/>
+      <ellipse cx="10" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.1)" transform="rotate(-15 10 18)"/>
+    </svg>
+    <span class="nav-wordmark">GAPCO</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow hero-glow-gold"></div>
+  <div class="hero-glow hero-glow-green"></div>
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">GAPCO, LLC</div>
+
+    <!-- Large Pineapple SVG -->
+    <svg class="hero-pineapple" viewBox="0 0 110 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Leaves -->
+      <path d="M55 42 Q55 14 42 4 Q49 20 55 28" fill="#52B788"/>
+      <path d="M55 42 Q55 14 68 4 Q61 20 55 28" fill="#2D6A4F"/>
+      <path d="M55 42 Q32 18 18 7 Q37 23 48 36" fill="#74C69D"/>
+      <path d="M55 42 Q78 18 92 7 Q73 23 62 36" fill="#40916C"/>
+      <path d="M55 42 Q20 22 7 14 Q29 30 46 40" fill="#52B788"/>
+      <path d="M55 42 Q90 22 103 14 Q81 30 64 40" fill="#2D6A4F"/>
+      <!-- Body -->
+      <ellipse cx="55" cy="93" rx="40" ry="48" fill="#F4C430"/>
+      <!-- Diamond pattern -->
+      <path d="M55 48 L44 60 L55 72 L66 60Z"   fill="#C9A227" opacity="0.35"/>
+      <path d="M33 72 L22 84 L33 96 L44 84Z"   fill="#C9A227" opacity="0.3"/>
+      <path d="M55 72 L44 84 L55 96 L66 84Z"   fill="#C9A227" opacity="0.3"/>
+      <path d="M77 72 L66 84 L77 96 L88 84Z"   fill="#C9A227" opacity="0.3"/>
+      <path d="M33 96 L22 108 L33 120 L44 108Z" fill="#C9A227" opacity="0.22"/>
+      <path d="M55 96 L44 108 L55 120 L66 108Z" fill="#C9A227" opacity="0.22"/>
+      <path d="M77 96 L66 108 L77 120 L88 108Z" fill="#C9A227" opacity="0.22"/>
+      <!-- Highlight -->
+      <ellipse cx="40" cy="70" rx="9" ry="14" fill="rgba(255,255,255,0.12)" transform="rotate(-18 40 70)"/>
+    </svg>
+
+    <h1>The Great American<br/><em>Pineapple Company</em></h1>
+    <p class="hero-subtitle">thegapco.com</p>
+    <p class="hero-tagline">A venture studio building bold, original brands across consumer goods, digital products, and creative culture.</p>
+
+    <div class="hero-actions">
+      <a href="#ventures" class="btn-primary">Our Ventures</a>
+      <a href="#contact" class="btn-outline">Say Hello</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-tag">Who We Are</div>
+        <h2>An umbrella built for bold, original ideas.</h2>
+        <p>GAPCO, The Great American Pineapple Company, is a venture studio and holding company for a growing portfolio of distinct brands. We build things that are considered, crafted, and a little unexpected.</p>
+        <p>From tactile, beautifully designed jigsaw puzzles to curated fashion goods to music experiences, every GAPCO venture starts with a simple question: <em>what would we actually want to use?</em></p>
+        <p>Headquartered in the United States. Shipping ideas to the world.</p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-card">
+          <div class="stat-num">3+</div>
+          <div class="stat-lbl">Active Ventures</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-lbl">Ideas in Flight</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-lbl">Guiding Vision</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">🍍</div>
+          <div class="stat-lbl">Official Spirit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures" id="ventures">
+  <div class="wrap">
+    <div class="ventures-header reveal">
+      <div>
+        <div class="section-tag">Our Portfolio</div>
+        <h2>Ventures &amp;<br/>Brands</h2>
+      </div>
+      <p class="ventures-header-note">Each brand under the GAPCO roof is independently conceived, carefully crafted, and built to last.</p>
+    </div>
+
+    <div class="ventures-grid">
+
+      <!-- Puzzleminds -->
+      <div class="vcard v-puzzleminds reveal">
+        <span class="vcard-badge badge-live">Live</span>
+        <div class="vcard-icon ico-green">🧩</div>
+        <div class="vcard-name">Puzzleminds</div>
+        <a href="https://puzzleminds.co" target="_blank" rel="noopener noreferrer" class="vcard-url">puzzleminds.co ↗</a>
+        <p class="vcard-desc">Creative and uniquely designed jigsaw puzzles for curious minds. Puzzleminds brings a fresh, design-forward aesthetic to the classic puzzle format, where every piece tells a bigger story.</p>
+        <a href="https://puzzleminds.co" target="_blank" rel="noopener noreferrer" class="vcard-link is-live">
+          Visit Puzzleminds <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Sockyard -->
+      <div class="vcard v-sockyard reveal">
+        <span class="vcard-badge badge-soon">Coming Soon</span>
+        <div class="vcard-icon ico-gold">🧦</div>
+        <div class="vcard-name">Sockyard</div>
+        <span class="vcard-url" style="cursor:default;">sockyard.com</span>
+        <p class="vcard-desc">A high-end e-commerce destination for people who take their sock game seriously. Premium materials, bold designs, and a curation that sets a new standard for what socks can be.</p>
+        <span class="vcard-link">In Development <span class="arrow">→</span></span>
+      </div>
+
+      <!-- Wovenmusic -->
+      <div class="vcard v-woven reveal">
+        <span class="vcard-badge badge-soon">Coming Soon</span>
+        <div class="vcard-icon ico-purple">🎵</div>
+        <div class="vcard-name">Wovenmusic</div>
+        <span class="vcard-url" style="cursor:default;">wovenmusic.app</span>
+        <p class="vcard-desc">A music experience app for iOS. Wovenmusic is being built for the listener who wants more than a playlist: a way to feel the texture and depth of sound in a new way.</p>
+        <span class="vcard-link">In Development <span class="arrow">→</span></span>
+      </div>
+
+      <!-- More -->
+      <div class="vcard vcard-more reveal">
+        <div class="vcard-icon" style="background:rgba(255,255,255,0.06); font-size:1.1rem;">✦</div>
+        <div>
+          <div class="vcard-name" style="font-size:1.1rem; margin-bottom:0.3rem;">More in the works.</div>
+          <p class="vcard-desc" style="margin:0;">GAPCO is always growing. New ventures across consumer goods, digital products, and creative culture are constantly in development. Stay tuned, or reach out.</p>
+        </div>
+        <a href="#contact" class="vcard-more-cta">Stay in Touch</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="wrap">
+    <div class="philosophy-top reveal">
+      <div class="section-tag" style="justify-content:center; border-left:3px solid var(--gold); padding-left:0.75rem;">How We Think</div>
+      <h2>Build things worth keeping.</h2>
+      <div class="divider"></div>
+      <p>The pineapple has long been a symbol of welcome, warmth, and something a little out of the ordinary. That's the spirit we bring to everything we make: products and experiences that feel both considered and alive.</p>
+      <p>We're not chasing trends. We're building brands that earn a permanent spot on the shelf, in the bag, in the daily routine.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-icon">🎯</div>
+        <h3>Intentional Design</h3>
+        <p>Every product we ship has a reason for existing. We obsess over the details so our customers don't have to wonder.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">🌱</div>
+        <h3>Built to Last</h3>
+        <p>GAPCO ventures are built with longevity in mind, not flash-in-the-pan moments, but enduring brands that compound over time.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">✦</div>
+        <h3>Distinctly Original</h3>
+        <p>We don't copy the market. We look for the gap, the thing that should exist but doesn't yet, and we build it ourselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner reveal">
+    <div class="section-tag">Say Hello</div>
+    <h2>Let's build something great.</h2>
+    <p>Whether you're a potential partner, a curious customer, or just someone who loves pineapples, we'd genuinely love to hear from you.</p>
+    <a href="mailto:hello@thegapco.com" class="contact-btn">hello@thegapco.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="https://thegapco.com" class="footer-logo">
+      <svg width="20" height="26" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M14 11 Q14 3 10 0.5 Q12 5.5 14 7.5" fill="#52B788"/>
+        <path d="M14 11 Q14 3 18 0.5 Q16 5.5 14 7.5" fill="#2D6A4F"/>
+        <path d="M14 11 Q7 4 3 1.5 Q8 6 12 9.5"    fill="#74C69D"/>
+        <path d="M14 11 Q21 4 25 1.5 Q20 6 16 9.5"  fill="#40916C"/>
+        <ellipse cx="14" cy="23" rx="12" ry="13" fill="#F4C430"/>
+        <path d="M14 11 L10 16 L14 21 L18 16Z" fill="#C9A227" opacity="0.4"/>
+        <path d="M14 21 L10 26 L14 31 L18 26Z" fill="#C9A227" opacity="0.4"/>
+        <path d="M4 16 L2 21 L6 23.5 L10 18.5Z" fill="#C9A227" opacity="0.3"/>
+        <path d="M24 16 L26 21 L22 23.5 L18 18.5Z" fill="#C9A227" opacity="0.3"/>
+      </svg>
+      <span class="footer-wordmark">GAPCO, LLC</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="https://puzzleminds.co" target="_blank" rel="noopener noreferrer">Puzzleminds</a>
+      <a href="#ventures">Ventures</a>
+      <a href="mailto:hello@thegapco.com">Contact</a>
+    </div>
+
+    <span class="footer-copy">© 2026 GAPCO, LLC. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll-based reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger siblings
+        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => entry.target.classList.add('visible'), idx * 90);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => io.observe(el));
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const navIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          const active = a.getAttribute('href') === '#' + entry.target.id;
+          if (!a.classList.contains('nav-cta')) {
+            a.style.color = active ? 'var(--gold)' : '';
+          }
+        });
+      }
+    });
+  }, { threshold: 0.45 });
+
+  sections.forEach(s => navIO.observe(s));
+</script>
+
+</body>
+</html>
