@@ -29,6 +29,16 @@
 
     html { scroll-behavior: smooth; }
 
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes border-spin {
+      to { --border-angle: 360deg; }
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--cream);
@@ -104,7 +114,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8rem 2rem 5rem;
+      padding: 8rem 2rem 10rem;
       position: relative;
       overflow: hidden;
     }
@@ -141,6 +151,8 @@
       position: relative;
       z-index: 1;
       max-width: 860px;
+      width: 100%;
+      text-align: center;
     }
 
     .eyebrow {
@@ -166,6 +178,7 @@
     }
 
     .hero-pineapple {
+      display: block;
       width: 110px;
       height: 130px;
       margin: 0 auto 2.25rem;
@@ -420,6 +433,7 @@
 
     .vcard {
       --accent: rgba(244,196,48,0.07);
+      --glow-color: var(--gold);
       background: rgba(255,255,255,0.035);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 14px;
@@ -438,6 +452,7 @@
       background: linear-gradient(135deg, var(--accent) 0%, transparent 55%);
       opacity: 0;
       transition: opacity 0.35s;
+      pointer-events: none;
     }
 
     .vcard:hover {
@@ -447,9 +462,37 @@
 
     .vcard:hover::before { opacity: 1; }
 
-    .vcard.v-puzzleminds { --accent: rgba(82,183,136,0.1); }
-    .vcard.v-sockyard    { --accent: rgba(244,196,48,0.09); }
-    .vcard.v-woven       { --accent: rgba(129,103,255,0.1); }
+    .vcard::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent,
+        var(--glow-color) 20%,
+        transparent 35%
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s;
+      animation: border-spin 3s linear infinite paused;
+      pointer-events: none;
+    }
+
+    .vcard:hover::after {
+      opacity: 1;
+      animation-play-state: running;
+    }
+
+    .vcard.v-puzzleminds { --accent: rgba(82,183,136,0.1); --glow-color: #52B788; }
+    .vcard.v-sockyard    { --accent: rgba(244,196,48,0.09); --glow-color: var(--gold); }
+    .vcard.v-woven       { --accent: rgba(129,103,255,0.1); --glow-color: #8167ff; }
 
     .vcard-badge {
       position: absolute;
@@ -850,8 +893,6 @@
   <div class="hero-pattern"></div>
 
   <div class="hero-content">
-    <div class="eyebrow">GAPCO, LLC</div>
-
     <!-- Large Pineapple SVG -->
     <svg class="hero-pineapple" viewBox="0 0 110 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <!-- Leaves -->
@@ -875,8 +916,9 @@
       <ellipse cx="40" cy="70" rx="9" ry="14" fill="rgba(255,255,255,0.12)" transform="rotate(-18 40 70)"/>
     </svg>
 
+    <div class="eyebrow">GAPCO, LLC</div>
+
     <h1>The Great American<br/><em>Pineapple Company</em></h1>
-    <p class="hero-subtitle">thegapco.com</p>
     <p class="hero-tagline">A venture studio building bold, original brands across consumer goods, digital products, and creative culture.</p>
 
     <div class="hero-actions">
