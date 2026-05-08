@@ -102,6 +102,16 @@
       transition: background 0.2s !important;
     }
     .nav-cta:hover { background: #ffd340 !important; }
+    .nav-cta-icon {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      vertical-align: middle;
+      margin-left: 4px;
+      position: relative;
+      top: -1px;
+    }
+    .nav-cta-icon svg { width: 13px; height: 13px; stroke: var(--navy); stroke-width: 2; }
 
     /* ── HERO ─────────────────────────────────────────────── */
     .hero {
@@ -112,9 +122,15 @@
       display: flex;
       align-items: flex-end;
     }
-    .hero-photo {
+    .hero-photo-wrap {
       position: absolute;
       inset: 0;
+      will-change: transform;
+    }
+    .hero-photo {
+      position: absolute;
+      top: -25%;
+      left: 0; right: 0; bottom: 0;
       background: url('https://images.unsplash.com/photo-1457497904090-72c27d90f7c1?w=2000&q=90') left center / cover no-repeat;
       animation: ken-burns 22s ease-in-out infinite alternate;
     }
@@ -603,8 +619,10 @@
     }
     .contact-bg {
       position: absolute;
-      inset: 0;
+      top: -25%;
+      left: 0; right: 0; bottom: 0;
       background: url('https://images.unsplash.com/photo-1683412383550-09f3b48cb297?w=2000&q=85') center center / cover no-repeat;
+      will-change: transform;
     }
     .contact-overlay {
       position: absolute;
@@ -776,13 +794,15 @@
     <li><a href="#about">About</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#philosophy">Philosophy</a></li>
-    <li><a href="#contact" class="nav-cta">Say Hello 👋</a></li>
+    <li><a href="#contact" class="nav-cta">Say Hello <i data-lucide="hand" class="nav-cta-icon"></i></a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-photo"></div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo"></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-label">GAPCO, LLC &mdash; Venture Studio</div>
@@ -1008,6 +1028,24 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // Parallax
+  const heroWrap    = document.querySelector('.hero-photo-wrap');
+  const contactBg   = document.querySelector('.contact-bg');
+  const contactSect = document.getElementById('contact');
+
+  function updateParallax() {
+    const y = window.scrollY;
+    if (heroWrap) {
+      heroWrap.style.transform = `translateY(${y * 0.2}px)`;
+    }
+    if (contactBg && contactSect) {
+      const rect = contactSect.getBoundingClientRect();
+      contactBg.style.transform = `translateY(${-rect.top * 0.15}px)`;
+    }
+  }
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  updateParallax();
 
   // Scroll-reveal with sibling stagger
   const reveals = document.querySelectorAll('.reveal');
