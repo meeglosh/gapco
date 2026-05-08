@@ -130,12 +130,28 @@
       width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(244,196,48,0.07) 0%, transparent 70%);
       top: -100px; left: 50%; transform: translateX(-50%);
+      animation: glow-drift-gold 14s ease-in-out infinite;
     }
 
     .hero-glow-green {
       width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(45,106,79,0.12) 0%, transparent 70%);
       bottom: 0; left: -100px;
+      animation: glow-drift-green 18s ease-in-out infinite;
+    }
+
+    @keyframes glow-drift-gold {
+      0%   { transform: translateX(-50%) translateY(0px)   scale(1);    opacity: 1; }
+      33%  { transform: translateX(-44%) translateY(30px)  scale(1.08); opacity: 0.85; }
+      66%  { transform: translateX(-56%) translateY(-20px) scale(0.94); opacity: 0.95; }
+      100% { transform: translateX(-50%) translateY(0px)   scale(1);    opacity: 1; }
+    }
+
+    @keyframes glow-drift-green {
+      0%   { transform: translateX(0px)   translateY(0px)   scale(1);    opacity: 1; }
+      40%  { transform: translateX(40px)  translateY(-30px) scale(1.1);  opacity: 0.8; }
+      70%  { transform: translateX(-20px) translateY(20px)  scale(0.95); opacity: 0.9; }
+      100% { transform: translateX(0px)   translateY(0px)   scale(1);    opacity: 1; }
     }
 
     .hero-pattern {
