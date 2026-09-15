@@ -9,6 +9,7 @@ Static landing page for [thegapco.com](https://thegapco.com) — a venture studi
 - [Puzzleminds](https://puzzleminds.co) — Creative and uniquely designed jigsaw puzzles
 - **Sockyard** — High-end e-commerce sock store *(coming soon)*
 - **Wovenmusic** — iOS music experience app *(coming soon)*
+- [Alarm Clock Generator](https://apps.apple.com/us/app/alarm-clock-simulator/id6799553201) — A ten-minute alarm streak game for iPhone
 - **Liminal Generator** — Generative ambient music and VHS video app for iPhone *(in TestFlight)*
 
 ## Support
