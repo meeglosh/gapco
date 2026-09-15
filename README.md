@@ -9,6 +9,11 @@ Static landing page for [thegapco.com](https://thegapco.com) — a venture studi
 - [Puzzleminds](https://puzzleminds.co) — Creative and uniquely designed jigsaw puzzles
 - **Sockyard** — High-end e-commerce sock store *(coming soon)*
 - **Wovenmusic** — iOS music experience app *(coming soon)*
+- **Liminal Generator** — Generative ambient music and VHS video app for iPhone *(in TestFlight)*
+
+## Support
+
+Generic App Store support is available at [thegapco.com/support](https://thegapco.com/support/) or by email at [hello@thegapco.com](mailto:hello@thegapco.com).
 
 ## Contact
 
